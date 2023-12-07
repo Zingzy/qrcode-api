@@ -37,12 +37,6 @@ jobs:
       - name: Format HTML Files
         run: prettier --write "**/*.html"
 
-      - name: Format JS Files
-        run: prettier --write "**/*.js"
-
-      - name: Format CSS Files
-        run: prettier --write "**/*.css"
-
       - name: Commit and Push Changes
         run: |
           git config --local user.email "action@github.com"

@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <link
       rel="icon"
       type="image/png"
@@ -11,8 +11,8 @@
     />
 
     <!-- Primary Meta Tags -->
-    <title>Modern QR Code Generator API</title>
-    <meta name="title" content="Modern QR Code Generator API" />
+    <title>Jinxed QR Code Generator</title>
+    <meta name="title" content="Jinxed QR Code Generator" />
     <meta
       name="description"
       content="Open-source qrcode generator api in written python"
@@ -21,7 +21,7 @@
     <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://qrcode.jinxed.cf/" />
-    <meta property="og:title" content="Modern QR Code Generator API" />
+    <meta property="og:title" content="Jinxed QR Code Generator" />
     <meta
       property="og:description"
       content="Open-source qrcode generator api in written python"
@@ -34,7 +34,7 @@
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image" />
     <meta property="twitter:url" content="https://qrcode.jinxed.cf/" />
-    <meta property="twitter:title" content="Modern QR Code Generator API" />
+    <meta property="twitter:title" content="Jinxed QR Code Generator" />
     <meta
       property="twitter:description"
       content="Open-source qrcode generator api in written python"
@@ -62,7 +62,7 @@
     <div class="navbar">
       <div class="navbar-logo">
         <img src="/static/images/logo.png" alt="Logo" class="logo" />
-        <div class="site-name">Jinxed QR Code API</div>
+        <div class="site-name">QR Code Generator</div>
       </div>
       <div class="navbar-links">
         <a href="https://github.com/zingzy/qrcode-api" class="navbar-link"
@@ -75,15 +75,16 @@
     <input type="text" id="qr-input" placeholder="Enter text or URL" required />
     <div id="optional-params">
       <div class="qr-type-div">
-        <label for="qr-type">Select QR Code type</label>
+        <label for="qr-type">QR Code Style</label>
         <select id="qr-type" onchange="toggleColorOptions()">
-          <option value="simple">Normal QR Code</option>
-          <option value="radial">Stylized QR Code</option>
+          <option value="simple">Simple QR</option>
+          <option value="radial">Gradient QR</option>
         </select>
       </div>
 
+      <div id="simple-config">
       <div id="fill-color">
-        <label for="fill-color">Select the Fill Color</label>
+        <label for="fill-color">Fill Color</label>
         <input
           type="color"
           id="fill-color-input"
@@ -93,7 +94,7 @@
       </div>
 
       <div id="background-color">
-        <label for="background-color">Select the Background Color</label>
+        <label for="background-color">Background Color</label>
         <input
           type="color"
           id="background-color-input"
@@ -101,9 +102,11 @@
           value="#ffffff"
         />
       </div>
+    </div>
 
+    <div id="radial-config">
       <div id="gradient-color">
-        <label for="gradient-color">Select the Inner Radial Gradient</label>
+        <label for="gradient-color">Inner Gradient Color</label>
         <input
           type="color"
           id="gradient-color-input"
@@ -113,7 +116,7 @@
       </div>
 
       <div id="gradient2-color">
-        <label for="gradient2-color">Select the Outer Radial Gradient</label>
+        <label for="gradient2-color">Outer Gradient Color</label>
         <input
           type="color"
           id="gradient2-color-input"
@@ -124,12 +127,12 @@
     </div>
 
     <button id="generate-btn" onclick="generateQRCode()">
-      Generate QR Code
+      GENERATE
     </button>
 
     <div id="qr-code"></div>
 
-    <div id="loading-spinner">Generating QR Code... <span>&#9201;</span></div>
+    <div id="loading-spinner"></div>
 
     <script
       src="{{ url_for('static', filename='js/index-script.js') }}"
