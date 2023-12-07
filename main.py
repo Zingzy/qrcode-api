@@ -23,6 +23,9 @@ cache = Cache(app)
 def index():
     return render_template("index.html")
 
+@app.route("/heath", methods=["GET", "POST"])
+def heath():
+    return jsonify({"status": "ok"})
 
 def qr(link, gradient1=(106, 26, 76), gradient2=(64, 53, 60), bg=(255, 255, 255)):
     qr = qrcode.QRCode(
