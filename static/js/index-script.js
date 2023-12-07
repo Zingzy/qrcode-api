@@ -23,6 +23,12 @@ toggleColorOptions();
 function generateQRCode() {
     // Display loading spinner
     document.getElementById("loading-spinner").style.display = "flex";
+    try {
+        // Remove previous download link
+        document.body.removeChild(document.querySelector(".qr-download-link"));
+    } catch (error) {
+        // Do nothing
+    }
 
     var userInput = document.getElementById("qr-input").value;
     var qrType = document.getElementById("qr-type").value;
@@ -34,12 +40,12 @@ function generateQRCode() {
     );
     var gradientColor = encodeURIComponent(
         getRgbFormat(
-            document.getElementById("gradient-color-input").value || "#6a1a4c",
+            document.getElementById("gradient-color-input").value || "#758156",
         ),
     );
     var gradient2Color = encodeURIComponent(
         getRgbFormat(
-            document.getElementById("gradient2-color-input").value || "#40353c",
+            document.getElementById("gradient2-color-input").value || "#67AF26",
         ),
     );
 
@@ -56,7 +62,9 @@ function generateQRCode() {
     }
 
     // Clear previous QR code
-    document.getElementById("qr-code").innerHTML = "";
+    // document.getElementById("qr-code").innerHTML = "";
+    var qrCodeContainer = document.getElementById("qr-code");
+    qrCodeContainer.innerHTML = "";
 
     // Create QR code image element
     var qrCodeImage = document.createElement("img");
@@ -64,11 +72,78 @@ function generateQRCode() {
 
     // Hide loading spinner once the image is loaded
     qrCodeImage.onload = function () {
+        qrCodeImage.id = "qr-img";
         document.getElementById("loading-spinner").style.display = "none";
+        document.documentElement.scrollTop = document.documentElement.scrollHeight;
+
+        var downloadElement = document.createElement("div");
+        downloadElement.innerText = "Download";
+        downloadElement.id = "download-link";
+        downloadElement.style.display = "none";
+        downloadElement.style.position = "absolute";
+
+        var width = document.getElementById("qr-img").width;
+        var height = document.getElementById("qr-img").height;
+        downloadElement.style.width = width-1 + "px";
+        downloadElement.style.height = height-1 + "px";
+
+        downloadElement.style.backgroundColor = "rgba(255, 255, 255, 0.125)";
+        downloadElement.style.borderRadius = "15px";
+        downloadElement.style.color = "Black";
+        downloadElement.style.fontSize = "30px";
+        downloadElement.style.fontWeight = "bold";
+        downloadElement.style.textAlign = "center";
+        downloadElement.style.lineHeight = height + "px";
+        downloadElement.style.cursor = "pointer";
+        downloadElement.style.backdropFilter = "blur(10px)";
+        downloadElement.style.transition = "all 0.3s ease-in-out";
+
+        var link = document.createElement("a");
+        link.classList.add("qr-download-link");
+
+        var xhr = new XMLHttpRequest();
+        xhr.responseType = "blob";
+        xhr.onload = function () {
+            var reader = new FileReader();
+            reader.onloadend = function () {
+                var dataURL = reader.result;
+                link.href = dataURL;
+            };
+            reader.readAsDataURL(xhr.response);
+        };
+        xhr.open("GET", apiUrl);
+        xhr.send();
+
+        link.download = "qrcode.png";
+        document.body.appendChild(link);
+
+        // Show "Download" element on hover
+        qrCodeContainer.addEventListener("mouseover", function () {
+            downloadElement.style.display = "block";
+        });
+
+        // Hide "Download" element when not hovering
+        qrCodeContainer.addEventListener("mouseout", function () {
+            downloadElement.style.display = "none";
+        });
+
+        // Trigger download on click
+        downloadElement.addEventListener("click", function () {
+            downloadQRCode();
+        });
+
+        // Append QR code image and "Download" element to the container
+        qrCodeContainer.appendChild(qrCodeImage);
+        qrCodeContainer.appendChild(downloadElement);
     };
 
     // Append QR code image to the #qr-code div
     document.getElementById("qr-code").appendChild(qrCodeImage);
+}
+
+function downloadQRCode() {
+    link = document.querySelector(".qr-download-link");
+    link.click();
 }
 
 function getRgbFormat(hexColor) {

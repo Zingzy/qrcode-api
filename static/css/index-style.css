@@ -1,3 +1,7 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     font-family: "JetBrains Mono", monospace;
     text-align: center;
@@ -164,8 +168,23 @@ select:hover {
     scale: 1.1;
 }
 
+#qr-code-master {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
 #qr-code {
-    margin-top: 20px;
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#qr-img {
+    border: 1px solid black;
+    border-radius: 15px;
 }
 
 #loading-spinner {
