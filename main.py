@@ -23,7 +23,7 @@ cache = Cache(app)
 def index():
     return render_template("index.html")
 
-@app.route("/heath", methods=["GET", "POST"])
+@app.route("/health", methods=["GET", "POST"])
 def heath():
     return jsonify({"status": "ok"})
 
