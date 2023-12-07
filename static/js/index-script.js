@@ -9,11 +9,11 @@ function toggleColorOptions() {
 
     // Show relevant color options based on QR code type
     if (qrType === "simple") {
-        document.getElementById("fill-color").style.display = "block";
-        document.getElementById("background-color").style.display = "block";
+        document.getElementById("fill-color").style.display = "flex";
+        document.getElementById("background-color").style.display = "flex";
     } else if (qrType === "radial") {
-        document.getElementById("gradient-color").style.display = "block";
-        document.getElementById("gradient2-color").style.display = "block";
+        document.getElementById("gradient-color").style.display = "flex";
+        document.getElementById("gradient2-color").style.display = "flex";
     }
 }
 

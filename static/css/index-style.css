@@ -1,34 +1,130 @@
 body {
-    font-family: 'Courier New', Courier, monospace;
-    text-align: center;
-    margin: 20px;
-    background-color: #f8f8f8;
+    font-family: 'JetBrains Mono', monospace;
+        text-align: center;
+    margin: 0;
+    background-color: #fefefe;
 }
 
-h1 {
-    font-size: 36px;
-    color: #4d4d4d;
+* {
+    -webkit-tap-highlight-color: transparent;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-user-select: none;
+    -webkit-touch-callout: none;
 }
+
+/* Scrollbar Styles */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(0, 0, 0, 0.4);
+}
+
+
+.navbar {
+    background: rgba(255, 255, 255, 0.5);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px;
+    backdrop-filter: blur(10px);
+    color: black;
+    margin-bottom: 50px;
+}
+
+.navbar-logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+}
+
+.site-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-link {
+    margin-right: 20px;
+    text-decoration: none;
+    color: black;
+    cursor: pointer;
+}
+
+.navbar-link:hover {
+    text-decoration: underline; /* Adjust the hover color as needed */
+}
+
 
 label {
     display: block;
     margin: 10px 0;
-    color: #666666;
+    color: black;
+    font-size: 25px;
 }
 
-input, select, button {
+input,
+select,
+button {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 5px;
     margin-bottom: 15px;
     background-color: #ffffff;
-    color: #333333;
+    color: black;
+}
+
+
+#qr-input {
+    width: 500px;
+    margin: 5px 0px;
+}
+
+.qr-type-div, #fill-color, #background-color, #gradient-color, #gradient-color-2 {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin: 20px 0;
+}
+
+.qr-type-div select {
+    margin-top: 5px;
 }
 
 .color-input {
     width: 80px;
     padding: 2px 4px;
+    margin-top: 15px;
+}
+
+#text-input-text {
+    font-size: 40px;
 }
 
 #generate-btn {
@@ -50,4 +146,8 @@ input, select, button {
     display: none;
     margin-top: 20px;
     color: #cc3333;
+}
+
+#optional-params {
+    margin: 35px auto;
 }
