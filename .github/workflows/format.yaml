@@ -1,27 +1,12 @@
-name: Format Code
-
-on:
-  push:
-    branches:
-      - main  # Change this to your main branch name
+on: [push, pull_request]
 
 jobs:
-  format_code:
+  python-black:
+    name: Python Black
     runs-on: ubuntu-latest
-
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
-
-      - name: Format Python and HTML Files
-        run: |
-          docker run --rm -v ${{ github.workspace }}:/code cytopia/docker-black:0.8 .
-          docker run --rm -v ${{ github.workspace }}:/code <html-formatting-image> prettier --write "**/*.html"
-
-      - name: Commit and Push Changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git commit -m "Auto-format code"
-          git push
+      - uses: actions/checkout@v3
+      - name: Python Black
+        uses: cytopia/docker-black@0.8
+        with:
+          path: '.'
