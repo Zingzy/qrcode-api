@@ -6,7 +6,7 @@ on:
       - main  # Change this to your main branch name
 
 jobs:
-  format_python:
+  format_code:
     runs-on: ubuntu-latest
 
     steps:
@@ -16,30 +16,15 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8  # Change this to your Python version
+          python-version: 3.11
 
-      - name: Install Python Dependencies
+      - name: Install Dependencies
         run: |
           python -m pip install --upgrade pip
           pip install black
 
       - name: Format Python Files
         run: black .
-
-      - name: Commit and Push Python Changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git commit -m "Auto-format Python files with Black"
-          git push
-
-  format_html:
-    runs-on: ubuntu-latest
-
-    steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v2
 
       - name: Install Node.js and npm
         uses: actions/setup-node@v3
@@ -52,10 +37,10 @@ jobs:
       - name: Format HTML Files
         run: prettier --write "**/*.html"
 
-      - name: Commit and Push HTML Changes
+      - name: Commit and Push Changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m "Auto-format HTML files with Prettier"
+          git commit -m "Auto-format code with Black and Prettier"
           git push
