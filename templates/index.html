@@ -1,50 +1,77 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="{{ url_for('static', filename='css/index-style.css') }}">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/index-style.css') }}"
+    />
     <title>Modern QR Code Generator</title>
-</head>
-<body>
+  </head>
+  <body>
     <h1>Modern QR Code Generator</h1>
 
     <label for="qr-input">Enter text or URL:</label>
-    <input type="text" id="qr-input" placeholder="Enter text or URL">
+    <input type="text" id="qr-input" placeholder="Enter text or URL" />
 
     <label for="qr-type">Select QR Code type:</label>
     <select id="qr-type" onchange="toggleColorOptions()">
-        <option value="simple">Normal QR Code</option>
-        <option value="radial">Stylized QR Code</option>
+      <option value="simple">Normal QR Code</option>
+      <option value="radial">Stylized QR Code</option>
     </select>
 
     <div id="fill-color">
-        <label for="fill-color">Select the Fill Color</label>
-        <input type="color" id="fill-color-input" class="color-input" value="#000000">
+      <label for="fill-color">Select the Fill Color</label>
+      <input
+        type="color"
+        id="fill-color-input"
+        class="color-input"
+        value="#000000"
+      />
     </div>
 
     <div id="background-color">
-        <label for="background-color">Select the Background Color</label>
-        <input type="color" id="background-color-input" class="color-input" value="#ffffff">
+      <label for="background-color">Select the Background Color</label>
+      <input
+        type="color"
+        id="background-color-input"
+        class="color-input"
+        value="#ffffff"
+      />
     </div>
 
     <div id="gradient-color">
-        <label for="gradient-color">Select the Inner Radial Gradient</label>
-        <input type="color" id="gradient-color-input" class="color-input" value="#6a1a4c">
+      <label for="gradient-color">Select the Inner Radial Gradient</label>
+      <input
+        type="color"
+        id="gradient-color-input"
+        class="color-input"
+        value="#6a1a4c"
+      />
     </div>
 
     <div id="gradient2-color">
-        <label for="gradient2-color">Select the Outer Radial Gradient</label>
-        <input type="color" id="gradient2-color-input" class="color-input" value="#40353c">
+      <label for="gradient2-color">Select the Outer Radial Gradient</label>
+      <input
+        type="color"
+        id="gradient2-color-input"
+        class="color-input"
+        value="#40353c"
+      />
     </div>
 
-    <button id="generate-btn" onclick="generateQRCode()">Generate QR Code</button>
+    <button id="generate-btn" onclick="generateQRCode()">
+      Generate QR Code
+    </button>
 
     <div id="qr-code"></div>
 
     <div id="loading-spinner">Generating QR Code... <span>&#9201;</span></div>
 
-    <script src="{{ url_for('static', filename='js/index-script.js') }}" defer></script>
-
-</body>
+    <script
+      src="{{ url_for('static', filename='js/index-script.js') }}"
+      defer
+    ></script>
+  </body>
 </html>
