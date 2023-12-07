@@ -2,6 +2,7 @@
 
 This API is a simple Flask application that generates QR codes. It provides two endpoints for generating QR codes with different styles: `simple` and `radial`.
 
+---
 <details>
 
 <summary><strong>Table of Contents</strong></summary>
@@ -17,6 +18,7 @@ This API is a simple Flask application that generates QR codes. It provides two 
   - [Index](#index-)
 
 </details>
+---
 
 ## Getting Started 🛠️
 
