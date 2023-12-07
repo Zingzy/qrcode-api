@@ -6,16 +6,15 @@ This API is a simple Flask application that generates QR codes. It provides two 
 
 <summary><strong>Table of Contents</strong></summary>
 
-- [Getting Started](#getting-started)
-  - [Prerequisites](#prerequisites)
-  - [Running the API](#running-the-api)
-- [Endpoints](#endpoints)
-  - [Simple QR Code](#simple-qr-code)
-  - [Radial QR Code](#radial-qr-code)
-- [Additional Endpoints](#additional-endpoints)
-  - [Health Check](#health-check)
-  - [Index](#index)
-- [Note](#note)
+- [Getting Started](#getting-started-%EF%B8%8F)
+  - [Prerequisites](#prerequisites-)
+  - [Running the API](#running-the-api-)
+- [Endpoints](#endpoints-)
+  - [Simple QR Code](#simple-qr-code-)
+  - [Radial QR Code](#radial-qr-code-)
+- [Additional Endpoints](#additional-endpoints-)
+  - [Health Check](#health-check-)
+  - [Index](#index-)
 
 </details>
 
@@ -64,7 +63,7 @@ The API will be accessible at http://localhost:8080.
 
 ---
 
-# Ednpoints 🚦
+# Endpoints 🚦
 
 1. ### Simple QR Code 📎
   
