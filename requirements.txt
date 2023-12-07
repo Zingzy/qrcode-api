@@ -1,0 +1,7 @@
+cryptography 
+Flask
+Flask-Caching
+Flask-Cors
+Pillow
+qrcode
+requests

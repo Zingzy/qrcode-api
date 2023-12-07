@@ -1,0 +1,53 @@
+body {
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;
+    margin: 20px;
+    background-color: #f8f8f8;
+}
+
+h1 {
+    font-size: 36px;
+    color: #4d4d4d;
+}
+
+label {
+    display: block;
+    margin: 10px 0;
+    color: #666666;
+}
+
+input, select, button {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    background-color: #ffffff;
+    color: #333333;
+}
+
+.color-input {
+    width: 80px;
+    padding: 2px 4px;
+}
+
+#generate-btn {
+    background-color: #cc3333;
+    color: #ffffff;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#generate-btn:hover {
+    background-color: #993333;
+}
+
+#qr-code {
+    margin-top: 20px;
+}
+
+#loading-spinner {
+    display: none;
+    margin-top: 20px;
+    color: #cc3333;
+}
