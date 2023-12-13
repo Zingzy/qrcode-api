@@ -26,21 +26,10 @@ jobs:
       - name: Format Python Files
         run: black .
 
-      - name: Install Node.js and npm
-        uses: actions/setup-node@v3
-        with:
-          node-version: '14'
-
-      - name: Install Prettier
-        run: npm install -g prettier
-
-      - name: Format HTML Files
-        run: prettier --write "**/*.html"
-
       - name: Commit and Push Changes
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"
           git add .
-          git commit -m "Auto-format code with Black and Prettier"
+          git commit -m "Auto-format code with Black"
           git push

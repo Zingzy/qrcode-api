@@ -1,9 +1,21 @@
 from flask import Flask, request, jsonify, send_file, render_template
 import base64
 import qrcode
-from qrcode.image.styles.moduledrawers.pil import RoundedModuleDrawer, HorizontalBarsDrawer, CircleModuleDrawer, SquareModuleDrawer, VerticalBarsDrawer, GappedSquareModuleDrawer
+from qrcode.image.styles.moduledrawers.pil import (
+    RoundedModuleDrawer,
+    HorizontalBarsDrawer,
+    CircleModuleDrawer,
+    SquareModuleDrawer,
+    VerticalBarsDrawer,
+    GappedSquareModuleDrawer,
+)
 from qrcode.image.styledpil import StyledPilImage
-from qrcode.image.styles.colormasks import RadialGradiantColorMask, SquareGradiantColorMask, HorizontalGradiantColorMask, VerticalGradiantColorMask
+from qrcode.image.styles.colormasks import (
+    RadialGradiantColorMask,
+    SquareGradiantColorMask,
+    HorizontalGradiantColorMask,
+    VerticalGradiantColorMask,
+)
 import io
 import sys
 import urllib.parse
@@ -94,13 +106,22 @@ def generate_simple_qr():
     version = suggest_qr_version(text)
     box_size = suggest_box_size(text)
 
-    qr = qrcode.QRCode(version=version, error_correction=qrcode.constants.ERROR_CORRECT_L, box_size=box_size, border=4)
+    qr = qrcode.QRCode(
+        version=version,
+        error_correction=qrcode.constants.ERROR_CORRECT_L,
+        box_size=box_size,
+        border=4,
+    )
     qr.add_data(text)
     qr.make(fit=True)
 
     try:
-        qr_image = qr.make_image(image_factory=StyledPilImage,
-        module_drawer=RoundedModuleDrawer(),fill_color=fill_color_rgb, back_color=back_color_rgb)
+        qr_image = qr.make_image(
+            image_factory=StyledPilImage,
+            module_drawer=RoundedModuleDrawer(),
+            fill_color=fill_color_rgb,
+            back_color=back_color_rgb,
+        )
     except Exception as e:
         return jsonify({"error": f"Error generating QR code: {str(e)}"}), 500
 
@@ -182,16 +203,21 @@ def generate_raidal_qr():
     version = suggest_qr_version(text)
     box_size = suggest_box_size(text)
 
-    qr = qrcode.QRCode(version=version, error_correction=qrcode.constants.ERROR_CORRECT_L, box_size=box_size, border=4)
+    qr = qrcode.QRCode(
+        version=version,
+        error_correction=qrcode.constants.ERROR_CORRECT_L,
+        box_size=box_size,
+        border=4,
+    )
     qr.add_data(text)
     qr.make(fit=True)
 
     try:
         qr_image = qr.make_image(
-        image_factory=StyledPilImage,
-        module_drawer=SquareModuleDrawer(),
-        color_mask=VerticalGradiantColorMask(back_color, gradient1, gradient2),
-    )
+            image_factory=StyledPilImage,
+            module_drawer=SquareModuleDrawer(),
+            color_mask=VerticalGradiantColorMask(back_color, gradient1, gradient2),
+        )
     except Exception as e:
         return jsonify({"error": f"Error generating QR code: {str(e)}"}), 500
 
