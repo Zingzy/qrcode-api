@@ -1,128 +1,81 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="96x96"
-      href="{{ url_for('static', filename='images/logo.png') }}"
-    />
 
-    <!-- Primary Meta Tags -->
-    <title>Jinxed QR Code Generator</title>
-    <meta name="title" content="Jinxed QR Code Generator" />
-    <meta
-      name="description"
-      content="Open-source qrcode generator api in written python"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+  <link rel="icon" type="image/png" sizes="96x96" href="{{ url_for('static', filename='images/logo.png') }}" />
 
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://qrcode.jinxed.cf/" />
-    <meta property="og:title" content="Jinxed QR Code Generator" />
-    <meta
-      property="og:description"
-      content="Open-source qrcode generator api in written python"
-    />
-    <meta
-      property="og:image"
-      content="{{ url_for('static', filename='images/banner.png') }}"
-    />
+  <!-- Primary Meta Tags -->
+  <title>Jinxed QR Code Generator</title>
+  <meta name="title" content="Jinxed QR Code Generator" />
+  <meta name="description" content="Open-source qrcode generator api in written python" />
 
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image" />
-    <meta property="twitter:url" content="https://qrcode.jinxed.cf/" />
-    <meta property="twitter:title" content="Jinxed QR Code Generator" />
-    <meta
-      property="twitter:description"
-      content="Open-source qrcode generator api in written python"
-    />
-    <meta
-      property="twitter:image"
-      content="{{ url_for('static', filename='images/banner.png') }}"
-    />
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://qrcode.jinxed.cf/" />
+  <meta property="og:title" content="Jinxed QR Code Generator" />
+  <meta property="og:description" content="Open-source qrcode generator api in written python" />
+  <meta property="og:image" content="{{ url_for('static', filename='images/banner.png') }}" />
 
-    <link
-      rel="stylesheet"
-      href="{{ url_for('static', filename='css/index-style.css') }}"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200&display=swap"
-      rel="stylesheet"
-    />
+  <!-- Twitter -->
+  <meta property="twitter:card" content="summary_large_image" />
+  <meta property="twitter:url" content="https://qrcode.jinxed.cf/" />
+  <meta property="twitter:title" content="Jinxed QR Code Generator" />
+  <meta property="twitter:description" content="Open-source qrcode generator api in written python" />
+  <meta property="twitter:image" content="{{ url_for('static', filename='images/banner.png') }}" />
 
-    <title>Modern QR Code Generator</title>
-  </head>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/index-style.css') }}" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@200&display=swap" rel="stylesheet" />
 
-  <body>
-    <div class="navbar">
-      <div class="navbar-logo">
-        <img src="/static/images/logo.png" alt="Logo" class="logo" />
-        <div class="site-name">QR Code Generator</div>
-      </div>
-      <div class="navbar-links">
-        <a href="https://github.com/zingzy/qrcode-api" class="navbar-link"
-          >API DOCS</a
-        >
-      </div>
+  <title>Modern QR Code Generator</title>
+</head>
+
+<body>
+  <div class="navbar">
+    <div class="navbar-logo">
+      <img src="/static/images/logo.png" alt="Logo" class="logo" />
+      <div class="site-name">QR Code Generator</div>
+    </div>
+    <div class="navbar-links">
+      <a href="https://github.com/zingzy/qrcode-api" class="navbar-link">API DOCS</a>
+    </div>
+  </div>
+
+  <label id="text-input-text" for="qr-input">Enter text or URL</label>
+  <input type="text" id="qr-input" placeholder="Enter text or URL" required />
+  <div id="optional-params">
+    <div class="qr-type-div">
+      <label for="qr-type">QR Code Style</label>
+      <select id="qr-type" onchange="toggleColorOptions()">
+        <option value="simple">Simple QR</option>
+        <option value="radial">Gradient QR</option>
+      </select>
     </div>
 
-    <label id="text-input-text" for="qr-input">Enter text or URL</label>
-    <input type="text" id="qr-input" placeholder="Enter text or URL" required />
-    <div id="optional-params">
-      <div class="qr-type-div">
-        <label for="qr-type">QR Code Style</label>
-        <select id="qr-type" onchange="toggleColorOptions()">
-          <option value="simple">Simple QR</option>
-          <option value="radial">Gradient QR</option>
-        </select>
-      </div>
-
-      <div id="simple-config">
+    <div id="simple-config">
       <div id="fill-color">
         <label for="fill-color">Fill Color</label>
-        <input
-          type="color"
-          id="fill-color-input"
-          class="color-input"
-          value="#000000"
-        />
+        <input type="color" id="fill-color-input" class="color-input" value="#000000" />
       </div>
 
       <div id="background-color">
         <label for="background-color">Background Color</label>
-        <input
-          type="color"
-          id="background-color-input"
-          class="color-input"
-          value="#ffffff"
-        />
+        <input type="color" id="background-color-input" class="color-input" value="#ffffff" />
       </div>
     </div>
 
     <div id="radial-config">
       <div id="gradient-color">
         <label for="gradient-color">Inner Gradient Color</label>
-        <input
-          type="color"
-          id="gradient-color-input"
-          class="color-input"
-          value="#758156"
-        />
+        <input type="color" id="gradient-color-input" class="color-input" value="#758156" />
       </div>
 
       <div id="gradient2-color">
         <label for="gradient2-color">Outer Gradient Color</label>
-        <input
-          type="color"
-          id="gradient2-color-input"
-          class="color-input"
-          value="#67AF26"
-        />
+        <input type="color" id="gradient2-color-input" class="color-input" value="#67AF26" />
       </div>
     </div>
 
@@ -131,15 +84,13 @@
     </button>
 
     <div id="qr-code-master">
-    <div id="qr-code"></div>
+      <div id="qr-code"></div>
     </div>
 
     <div id="loading-spinner"></div>
 
-    <script
-      src="{{ url_for('static', filename='js/index-script.js') }}"
-      defer
-    ></script>
+    <script src="{{ url_for('static', filename='js/index-script.js') }}" defer></script>
 
-  </body>
+</body>
+
 </html>
