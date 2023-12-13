@@ -5,3 +5,4 @@ venv
 .env
 poetry.lock
 .idea
+.vscode

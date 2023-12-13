@@ -47,7 +47,7 @@ body {
     padding: 12px 15px;
     backdrop-filter: blur(10px);
     color: black;
-    margin-bottom: 50px;
+    margin-bottom: 40px;
 }
 
 .navbar-logo {
@@ -108,7 +108,10 @@ button {
 #qr-input {
     max-width: 500px;
     width: 500px;
-    margin: 5px 10px;
+    margin: 10px 10px;
+    margin-top: 20px;
+    height: 30px;
+    font-size: 20px;
 }
 
 input:hover,
