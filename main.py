@@ -1,14 +1,16 @@
 from flask import Flask, request, jsonify, send_file, render_template
 import base64
 import qrcode
-from qrcode.image.styles.moduledrawers.pil import RoundedModuleDrawer
+from qrcode.image.styles.moduledrawers.pil import RoundedModuleDrawer, HorizontalBarsDrawer, CircleModuleDrawer, SquareModuleDrawer, VerticalBarsDrawer, GappedSquareModuleDrawer
 from qrcode.image.styledpil import StyledPilImage
-from qrcode.image.styles.colormasks import RadialGradiantColorMask
+from qrcode.image.styles.colormasks import RadialGradiantColorMask, SquareGradiantColorMask, HorizontalGradiantColorMask, VerticalGradiantColorMask
 import io
 import sys
 import urllib.parse
 from flask_caching import Cache
 from flask_cors import CORS
+from utils import *
+import json
 
 config = {"DEBUG": True, "CACHE_TYPE": "SimpleCache", "CACHE_DEFAULT_TIMEOUT": 300}
 
@@ -29,57 +31,83 @@ def heath():
     return jsonify({"status": "ok"})
 
 
-def qr(link, gradient1=(106, 26, 76), gradient2=(64, 53, 60), bg=(255, 255, 255)):
-    qr = qrcode.QRCode(
-        version=1,
-        error_correction=qrcode.constants.ERROR_CORRECT_L,
-        box_size=10,
-        border=4,
-    )
-    qr.add_data(link)
-    qr.make(fit=True)
-
-    img = qr.make_image(
-        image_factory=StyledPilImage,
-        module_drawer=RoundedModuleDrawer(),
-        color_mask=RadialGradiantColorMask(bg, gradient1, gradient2),
-    )
-    return img
-
-
-def str_to_tuple_rgb(s):
-    if not s.startswith("(") or not s.endswith(")"):
-        return None
-    s = s.strip("()")
-    parts = s.split(",")
-    if len(parts) != 3:
-        return None
-    try:
-        r, g, b = map(int, parts)
-    except ValueError:
-        return None
-    if not (0 <= r <= 255 and 0 <= g <= 255 and 0 <= b <= 255):
-        return None
-
-    t = eval("(" + s + ")")
-    return t
-
-
-@app.route("/simple", methods=["POST", "GET"])
+@app.route("/classic", methods=["POST", "GET"])
 def generate_simple_qr():
-    text = request.args.get("url")
+    text = request.args.get("text")
     fill_color = request.args.get("fill", "black")
     back_color = request.args.get("back", "white")
+    size = request.args.get("size", None)
+    data_format = request.args.get("format", None)
+    formatting_dict = request.args.get("formattings", None)
 
-    if not text:
-        return jsonify({"error": "URL parameter is missing"}), 400
-    text = urllib.parse.unquote(text).strip()
+    if not text and not data_format:
+        return jsonify({"error": "Text parameter is missing"}), 400
 
-    qr = qrcode.QRCode(version=1, box_size=10, border=4)
+    if data_format:
+        if not formatting_dict:
+            return jsonify({"error": "Formattings parameter is missing"}), 400
+
+        try:
+            formatting_dict = urllib.parse.unquote(formatting_dict).strip()
+            formatting_dict = json.loads(formatting_dict)
+        except Exception as e:
+            print(e, file=sys.stdout)
+            return jsonify({"error": "Invalid formatting Input"}), 400
+
+        if data_format.lower() in prefix_maps.keys():
+            try:
+                text = prefix_maps[data_format.lower()](**formatting_dict)
+                print(text)
+            except Exception as e:
+                return jsonify({"error": str(e)}), 400
+        else:
+            return jsonify({"error": "Invalid data format"}), 400
+
+    if size:
+        try:
+            size = int(size)
+            if size > 1000:
+                return jsonify({"error": "Size is too large"}), 400
+            if size < 10:
+                return jsonify({"error": "Size is too small"}), 400
+        except:
+            return jsonify({"error": "Invalid size"}), 400
+
+    if not data_format or not formatting_dict:
+        try:
+            text = urllib.parse.unquote(text).strip()
+        except:
+            return jsonify({"error": "Invalid text Input"}), 400
+
+    fill_color = urllib.parse.unquote(fill_color)
+    back_color = urllib.parse.unquote(back_color)
+
+    try:
+        fill_color_rgb = parse_color(fill_color)
+        back_color_rgb = parse_color(back_color)
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 400
+
+    if fill_color_rgb == "transparent":
+        fill_color_rgb = (0, 0, 0)
+
+    version = suggest_qr_version(text)
+    box_size = suggest_box_size(text)
+
+    qr = qrcode.QRCode(version=version, error_correction=qrcode.constants.ERROR_CORRECT_L, box_size=box_size, border=4)
     qr.add_data(text)
     qr.make(fit=True)
-    qr_image = qr.make_image(fill_color=fill_color, back_color=back_color)
 
+    try:
+        qr_image = qr.make_image(image_factory=StyledPilImage,
+        module_drawer=RoundedModuleDrawer(),fill_color=fill_color_rgb, back_color=back_color_rgb)
+    except Exception as e:
+        return jsonify({"error": f"Error generating QR code: {str(e)}"}), 500
+
+    if size:
+        qr_image = qr_image.resize((size, size), resample=0)
+
+    # Stream the image directly to the response
     image_stream = io.BytesIO()
     qr_image.save(image_stream, format="PNG")
     image_stream.seek(0)
@@ -87,38 +115,88 @@ def generate_simple_qr():
     return send_file(image_stream, mimetype="image/png")
 
 
-@app.route("/radial", methods=["POST", "GET"])
+@app.route("/gradient", methods=["POST", "GET"])
 def generate_raidal_qr():
-    text = request.args.get("url")
+    text = request.args.get("text")
     gradient1 = request.args.get("gradient1", "(106,26,76)")
-    print(gradient1, file=sys.stdout)
     gradient2 = request.args.get("gradient2", "(64,53,60)")
-    print(gradient2, file=sys.stdout)
-    back = request.args.get("back", "(255, 255, 255)")
+    back_color = request.args.get("back", "(255, 255, 255)")
+    size = request.args.get("size", None)
+    data_format = request.args.get("format", None)
+    formatting_dict = request.args.get("formattings", None)
 
-    if not text:
-        return jsonify({"error": "URL parameter is missing"}), 400
+    if not text and not data_format:
+        return jsonify({"error": "Text parameter is missing"}), 400
 
-    text = urllib.parse.unquote(text).strip()
-    gradient1 = urllib.parse.unquote(gradient1).strip()
-    gradient2 = urllib.parse.unquote(gradient2).strip()
+    if data_format:
+        if not formatting_dict:
+            return jsonify({"error": "Formattings parameter is missing"}), 400
 
-    print(gradient1, gradient2)
+        try:
+            formatting_dict = urllib.parse.unquote(formatting_dict).strip()
+            formatting_dict = json.loads(formatting_dict)
+        except Exception as e:
+            print(e, file=sys.stdout)
+            return jsonify({"error": "Invalid formatting Input"}), 400
 
-    if (
-        str_to_tuple_rgb(gradient1)
-        and str_to_tuple_rgb(gradient2)
-        and str_to_tuple_rgb(back)
-    ):
-        print(str_to_tuple_rgb(gradient1), str_to_tuple_rgb(gradient2))
-        back = (
-            (1, 1, 1) if str_to_tuple_rgb(back) == (0, 0, 0) else str_to_tuple_rgb(back)
-        )
-        qr_image = qr(
-            text, str_to_tuple_rgb(gradient1), str_to_tuple_rgb(gradient2), back
-        )
-    else:
-        qr_image = qr(text)
+        if data_format.lower() in prefix_maps.keys():
+            try:
+                text = prefix_maps[data_format.lower()](**formatting_dict)
+                print(text)
+            except Exception as e:
+                return jsonify({"error": str(e)}), 400
+        else:
+            return jsonify({"error": "Invalid data format"}), 400
+
+    if size:
+        try:
+            size = int(size)
+            if size > 1000:
+                return jsonify({"error": "Size is too large"}), 400
+            if size < 10:
+                return jsonify({"error": "Size is too small"}), 400
+        except:
+            return jsonify({"error": "Invalid size"}), 400
+
+    if not data_format or not formatting_dict:
+        try:
+            text = urllib.parse.unquote(text).strip()
+        except:
+            return jsonify({"error": "Invalid text Input"}), 400
+
+    try:
+        text = urllib.parse.unquote(text).strip()
+        gradient1 = urllib.parse.unquote(gradient1).strip()
+        gradient2 = urllib.parse.unquote(gradient2).strip()
+        back_color = urllib.parse.unquote(back_color).strip()
+    except:
+        return jsonify({"error": "Invalid text Input"}), 400
+
+    try:
+        gradient1 = parse_color(gradient1)
+        gradient2 = parse_color(gradient2)
+        back_color = parse_color(back_color)
+    except ValueError as e:
+        return jsonify({"error": str(e)}), 400
+
+    version = suggest_qr_version(text)
+    box_size = suggest_box_size(text)
+
+    qr = qrcode.QRCode(version=version, error_correction=qrcode.constants.ERROR_CORRECT_L, box_size=box_size, border=4)
+    qr.add_data(text)
+    qr.make(fit=True)
+
+    try:
+        qr_image = qr.make_image(
+        image_factory=StyledPilImage,
+        module_drawer=SquareModuleDrawer(),
+        color_mask=VerticalGradiantColorMask(back_color, gradient1, gradient2),
+    )
+    except Exception as e:
+        return jsonify({"error": f"Error generating QR code: {str(e)}"}), 500
+
+    if size:
+        qr_image = qr_image.resize((size, size), resample=0)
 
     image_stream = io.BytesIO()
     qr_image.save(image_stream, format="PNG")
@@ -128,4 +206,4 @@ def generate_raidal_qr():
 
 
 if __name__ == "__main__":
-    app.run(debug=True, host="0.0.0.0", port=8080, use_reloader=False)
+    app.run(debug=True, host="0.0.0.0", port=8080, use_reloader=True)

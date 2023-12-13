@@ -162,6 +162,7 @@ select:hover {
     margin: 60px 0 20px 0;
     padding: 15px 20px;
     font-size: 20px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 2px 4px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
 }
 
 #generate-btn:hover {
@@ -262,8 +263,8 @@ select:hover {
 
     #qr-input {
         width: -webkit-fill-available;
-        margin-left: 20px;
-        margin-right: 20px;
+        margin-left: 30px;
+        margin-right: 30px;
     }
 
     .color-input {

@@ -1,0 +1,538 @@
+[
+    {
+        "label": "annotations",
+        "importPath": "__future__",
+        "description": "__future__",
+        "isExtraImport": true,
+        "detail": "__future__",
+        "documentation": {}
+    },
+    {
+        "label": "os",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "os",
+        "description": "os",
+        "detail": "os",
+        "documentation": {}
+    },
+    {
+        "label": "site",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "site",
+        "description": "site",
+        "detail": "site",
+        "documentation": {}
+    },
+    {
+        "label": "sys",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "sys",
+        "description": "sys",
+        "detail": "sys",
+        "documentation": {}
+    },
+    {
+        "label": "Flask",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "request",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "jsonify",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "send_file",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "render_template",
+        "importPath": "flask",
+        "description": "flask",
+        "isExtraImport": true,
+        "detail": "flask",
+        "documentation": {}
+    },
+    {
+        "label": "base64",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "base64",
+        "description": "base64",
+        "detail": "base64",
+        "documentation": {}
+    },
+    {
+        "label": "qrcode",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "qrcode",
+        "description": "qrcode",
+        "detail": "qrcode",
+        "documentation": {}
+    },
+    {
+        "label": "RoundedModuleDrawer",
+        "importPath": "qrcode.image.styles.moduledrawers.pil",
+        "description": "qrcode.image.styles.moduledrawers.pil",
+        "isExtraImport": true,
+        "detail": "qrcode.image.styles.moduledrawers.pil",
+        "documentation": {}
+    },
+    {
+        "label": "HorizontalBarsDrawer",
+        "importPath": "qrcode.image.styles.moduledrawers.pil",
+        "description": "qrcode.image.styles.moduledrawers.pil",
+        "isExtraImport": true,
+        "detail": "qrcode.image.styles.moduledrawers.pil",
+        "documentation": {}
+    },
+    {
+        "label": "CircleModuleDrawer",
+        "importPath": "qrcode.image.styles.moduledrawers.pil",
+        "description": "qrcode.image.styles.moduledrawers.pil",
+        "isExtraImport": true,
+        "detail": "qrcode.image.styles.moduledrawers.pil",
+        "documentation": {}
+    },
+    {
+        "label": "SquareModuleDrawer",
+        "importPath": "qrcode.image.styles.moduledrawers.pil",
+        "description": "qrcode.image.styles.moduledrawers.pil",
+        "isExtraImport": true,
+        "detail": "qrcode.image.styles.moduledrawers.pil",
+        "documentation": {}
+    },
+    {
+        "label": "VerticalBarsDrawer",
+        "importPath": "qrcode.image.styles.moduledrawers.pil",
+        "description": "qrcode.image.styles.moduledrawers.pil",
+        "isExtraImport": true,
+        "detail": "qrcode.image.styles.moduledrawers.pil",
+        "documentation": {}
+    },
+    {
+        "label": "GappedSquareModuleDrawer",
+        "importPath": "qrcode.image.styles.moduledrawers.pil",
+        "description": "qrcode.image.styles.moduledrawers.pil",
+        "isExtraImport": true,
+        "detail": "qrcode.image.styles.moduledrawers.pil",
+        "documentation": {}
+    },
+    {
+        "label": "StyledPilImage",
+        "importPath": "qrcode.image.styledpil",
+        "description": "qrcode.image.styledpil",
+        "isExtraImport": true,
+        "detail": "qrcode.image.styledpil",
+        "documentation": {}
+    },
+    {
+        "label": "RadialGradiantColorMask",
+        "importPath": "qrcode.image.styles.colormasks",
+        "description": "qrcode.image.styles.colormasks",
+        "isExtraImport": true,
+        "detail": "qrcode.image.styles.colormasks",
+        "documentation": {}
+    },
+    {
+        "label": "SquareGradiantColorMask",
+        "importPath": "qrcode.image.styles.colormasks",
+        "description": "qrcode.image.styles.colormasks",
+        "isExtraImport": true,
+        "detail": "qrcode.image.styles.colormasks",
+        "documentation": {}
+    },
+    {
+        "label": "HorizontalGradiantColorMask",
+        "importPath": "qrcode.image.styles.colormasks",
+        "description": "qrcode.image.styles.colormasks",
+        "isExtraImport": true,
+        "detail": "qrcode.image.styles.colormasks",
+        "documentation": {}
+    },
+    {
+        "label": "VerticalGradiantColorMask",
+        "importPath": "qrcode.image.styles.colormasks",
+        "description": "qrcode.image.styles.colormasks",
+        "isExtraImport": true,
+        "detail": "qrcode.image.styles.colormasks",
+        "documentation": {}
+    },
+    {
+        "label": "io",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "io",
+        "description": "io",
+        "detail": "io",
+        "documentation": {}
+    },
+    {
+        "label": "urllib.parse",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "urllib.parse",
+        "description": "urllib.parse",
+        "detail": "urllib.parse",
+        "documentation": {}
+    },
+    {
+        "label": "Cache",
+        "importPath": "flask_caching",
+        "description": "flask_caching",
+        "isExtraImport": true,
+        "detail": "flask_caching",
+        "documentation": {}
+    },
+    {
+        "label": "CORS",
+        "importPath": "flask_cors",
+        "description": "flask_cors",
+        "isExtraImport": true,
+        "detail": "flask_cors",
+        "documentation": {}
+    },
+    {
+        "label": "*",
+        "importPath": "utils",
+        "description": "utils",
+        "isExtraImport": true,
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "json",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "json",
+        "description": "json",
+        "detail": "json",
+        "documentation": {}
+    },
+    {
+        "label": "qrcode.constants",
+        "kind": 6,
+        "isExtraImport": true,
+        "importPath": "qrcode.constants",
+        "description": "qrcode.constants",
+        "detail": "qrcode.constants",
+        "documentation": {}
+    },
+    {
+        "label": "datetime",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "timedelta",
+        "importPath": "datetime",
+        "description": "datetime",
+        "isExtraImport": true,
+        "detail": "datetime",
+        "documentation": {}
+    },
+    {
+        "label": "bin_dir",
+        "kind": 5,
+        "importPath": "env.Scripts.activate_this",
+        "description": "env.Scripts.activate_this",
+        "peekOfCode": "bin_dir = os.path.dirname(abs_file)\nbase = bin_dir[: -len(\"Scripts\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))",
+        "detail": "env.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "base",
+        "kind": 5,
+        "importPath": "env.Scripts.activate_this",
+        "description": "env.Scripts.activate_this",
+        "peekOfCode": "base = bin_dir[: -len(\"Scripts\") - 1]  # strip away the bin part from the __file__, plus the path separator\n# prepend bin to PATH (this file is inside the bin directory)\nos.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)",
+        "detail": "env.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"PATH\"]",
+        "kind": 5,
+        "importPath": "env.Scripts.activate_this",
+        "description": "env.Scripts.activate_this",
+        "peekOfCode": "os.environ[\"PATH\"] = os.pathsep.join([bin_dir, *os.environ.get(\"PATH\", \"\").split(os.pathsep)])\nos.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix",
+        "detail": "env.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV\"]",
+        "kind": 5,
+        "importPath": "env.Scripts.activate_this",
+        "description": "env.Scripts.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV\"] = base  # virtual env is right above bin directory\nos.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "env.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "os.environ[\"VIRTUAL_ENV_PROMPT\"]",
+        "kind": 5,
+        "importPath": "env.Scripts.activate_this",
+        "description": "env.Scripts.activate_this",
+        "peekOfCode": "os.environ[\"VIRTUAL_ENV_PROMPT\"] = \"\" or os.path.basename(base)  # noqa: SIM222\n# add the virtual environments libraries to the host python import mechanism\nprev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "env.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "prev_length",
+        "kind": 5,
+        "importPath": "env.Scripts.activate_this",
+        "description": "env.Scripts.activate_this",
+        "peekOfCode": "prev_length = len(sys.path)\nfor lib in \"..\\\\Lib\\\\site-packages\".split(os.pathsep):\n    path = os.path.realpath(os.path.join(bin_dir, lib))\n    site.addsitedir(path.decode(\"utf-8\") if \"\" else path)\nsys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "env.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.path[:]",
+        "kind": 5,
+        "importPath": "env.Scripts.activate_this",
+        "description": "env.Scripts.activate_this",
+        "peekOfCode": "sys.path[:] = sys.path[prev_length:] + sys.path[0:prev_length]\nsys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "env.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.real_prefix",
+        "kind": 5,
+        "importPath": "env.Scripts.activate_this",
+        "description": "env.Scripts.activate_this",
+        "peekOfCode": "sys.real_prefix = sys.prefix\nsys.prefix = base",
+        "detail": "env.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "sys.prefix",
+        "kind": 5,
+        "importPath": "env.Scripts.activate_this",
+        "description": "env.Scripts.activate_this",
+        "peekOfCode": "sys.prefix = base",
+        "detail": "env.Scripts.activate_this",
+        "documentation": {}
+    },
+    {
+        "label": "index",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def index():\n    return render_template(\"index.html\")\n@app.route(\"/health\", methods=[\"GET\", \"POST\"])\ndef heath():\n    return jsonify({\"status\": \"ok\"})\n@app.route(\"/classic\", methods=[\"POST\", \"GET\"])\ndef generate_simple_qr():\n    text = request.args.get(\"text\")\n    fill_color = request.args.get(\"fill\", \"black\")\n    back_color = request.args.get(\"back\", \"white\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "heath",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def heath():\n    return jsonify({\"status\": \"ok\"})\n@app.route(\"/classic\", methods=[\"POST\", \"GET\"])\ndef generate_simple_qr():\n    text = request.args.get(\"text\")\n    fill_color = request.args.get(\"fill\", \"black\")\n    back_color = request.args.get(\"back\", \"white\")\n    size = request.args.get(\"size\", None)\n    data_format = request.args.get(\"format\", None)\n    formatting_dict = request.args.get(\"formattings\", None)",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "generate_simple_qr",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def generate_simple_qr():\n    text = request.args.get(\"text\")\n    fill_color = request.args.get(\"fill\", \"black\")\n    back_color = request.args.get(\"back\", \"white\")\n    size = request.args.get(\"size\", None)\n    data_format = request.args.get(\"format\", None)\n    formatting_dict = request.args.get(\"formattings\", None)\n    if not text and not data_format:\n        return jsonify({\"error\": \"Text parameter is missing\"}), 400\n    if data_format:",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "generate_raidal_qr",
+        "kind": 2,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "def generate_raidal_qr():\n    text = request.args.get(\"text\")\n    gradient1 = request.args.get(\"gradient1\", \"(106,26,76)\")\n    gradient2 = request.args.get(\"gradient2\", \"(64,53,60)\")\n    back_color = request.args.get(\"back\", \"(255, 255, 255)\")\n    size = request.args.get(\"size\", None)\n    data_format = request.args.get(\"format\", None)\n    formatting_dict = request.args.get(\"formattings\", None)\n    if not text and not data_format:\n        return jsonify({\"error\": \"Text parameter is missing\"}), 400",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "config",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "config = {\"DEBUG\": True, \"CACHE_TYPE\": \"SimpleCache\", \"CACHE_DEFAULT_TIMEOUT\": 300}\napp = Flask(__name__)\nCORS(app)\napp.config.from_mapping(config)\ncache = Cache(app)\n@app.route(\"/\", methods=[\"GET\"])\ndef index():\n    return render_template(\"index.html\")\n@app.route(\"/health\", methods=[\"GET\", \"POST\"])\ndef heath():",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "app",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "app = Flask(__name__)\nCORS(app)\napp.config.from_mapping(config)\ncache = Cache(app)\n@app.route(\"/\", methods=[\"GET\"])\ndef index():\n    return render_template(\"index.html\")\n@app.route(\"/health\", methods=[\"GET\", \"POST\"])\ndef heath():\n    return jsonify({\"status\": \"ok\"})",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "cache",
+        "kind": 5,
+        "importPath": "main",
+        "description": "main",
+        "peekOfCode": "cache = Cache(app)\n@app.route(\"/\", methods=[\"GET\"])\ndef index():\n    return render_template(\"index.html\")\n@app.route(\"/health\", methods=[\"GET\", \"POST\"])\ndef heath():\n    return jsonify({\"status\": \"ok\"})\n@app.route(\"/classic\", methods=[\"POST\", \"GET\"])\ndef generate_simple_qr():\n    text = request.args.get(\"text\")",
+        "detail": "main",
+        "documentation": {}
+    },
+    {
+        "label": "parse_color",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def parse_color(color_str):\n    try:\n        # Check if color_str is a named color\n        if color_str.lower() in named_colors:\n            return named_colors[color_str.lower()]\n        if color_str.startswith(\"#\"):\n            # Hex color\n            color_str = color_str.lstrip(\"#\")\n            if len(color_str) == 6:\n                return tuple(int(color_str[i : i + 2], 16) for i in (0, 2, 4))",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "suggest_qr_version",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def suggest_qr_version(data, error_correction=qrcode.constants.ERROR_CORRECT_L):\n    # Define the maximum data capacity for each version and error correction level\n    max_capacity = [\n        [41, 77, 127, 187, 255, 322, 370, 461, 552, 652, 772, 883, 1022, 1101, 1250, 1408],\n        [34, 63, 101, 149, 202, 255, 293, 365, 432, 513, 604, 691, 796, 871, 991, 1082],\n        [27, 48, 77, 111, 144, 178, 206, 258, 308, 370, 438, 506, 586, 644, 718, 808],\n        [17, 34, 58, 82, 106, 139, 154, 202, 235, 288, 331, 374, 427, 468, 530, 602]\n    ]\n    # Find the minimum version that can accommodate the data length\n    for version, capacities in enumerate(max_capacity):",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "suggest_box_size",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def suggest_box_size(data, border_fraction=0.5):\n    # Constants for module size and border default\n    box_size_factor = 50\n    # Calculate the recommended box size based on the version\n    recommended_box_size = max(len(data) // box_size_factor, 10)\n    # Return the recommended sizes\n    return recommended_box_size\ndef format_contact(name, phone, email=None, address=None, company=None, website=None, **kwargs):\n    # Format the contact data according to the vCard specification\n    contact_data = f'BEGIN:VCARD\\nVERSION:3.0\\nFN:{name}\\n'  # Full name",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "format_contact",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def format_contact(name, phone, email=None, address=None, company=None, website=None, **kwargs):\n    # Format the contact data according to the vCard specification\n    contact_data = f'BEGIN:VCARD\\nVERSION:3.0\\nFN:{name}\\n'  # Full name\n    contact_data += f'ORG:{company}\\n' if company else \"\" # Organization\n    contact_data += f'ADR:;;{address};;;;\\n' if address else \"\" # Address\n    contact_data += f'TEL;TYPE=work,voice;VALUE=uri:tel:{phone}\\n'  # Phone\n    contact_data += f'EMAIL;TYPE=INTERNET;TYPE=WORK;TYPE=PREF:{email}\\n' if email else \"\"  # Email\n    contact_data += f\"URL;TYPE=Homepage:{website}\" if website else \"\"\n    contact_data += 'END:VCARD'  # End of contact entry\n    return contact_data",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "format_event",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def format_event(title, start=None, end=None, location=None, description=None, **kwargs):\n    event_data = f'BEGIN:VEVENT\\nSUMMARY:{title}\\n'  # Title\n    try:\n        start = start.strftime('%Y%m%dT%H%M%SZ')\n        end = end.strftime('%Y%m%dT%H%M%SZ')\n    except:\n        start = end = \"\"\n    if start:\n        event_data += f'DTSTART:{start}\\n'  # Start time\n    if end:",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "format_bookmark",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def format_bookmark(title, url, **kwargs):\n    data_bookmark = f\"MEBKM:URL:{url};TITLE:{title};;\"\n    return data_bookmark\ndef format_wifi(ssid, password=None, **kwargs):\n    if password:\n        wifi_data = f\"WIFI:T:WPA;S:{ssid};P:{password};;\"\n    else:\n        wifi_data = f\"WIFI:T:nopass;S:{ssid};;\"\n    return wifi_data\ndef format_bitcoin(address, amount, message=None, **kwargs):",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "format_wifi",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def format_wifi(ssid, password=None, **kwargs):\n    if password:\n        wifi_data = f\"WIFI:T:WPA;S:{ssid};P:{password};;\"\n    else:\n        wifi_data = f\"WIFI:T:nopass;S:{ssid};;\"\n    return wifi_data\ndef format_bitcoin(address, amount, message=None, **kwargs):\n    bitcoin_data = f\"bitcoin:{address}?amount={amount}\"\n    if message:\n        bitcoin_data += f\"&message={message}\"",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "format_bitcoin",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def format_bitcoin(address, amount, message=None, **kwargs):\n    bitcoin_data = f\"bitcoin:{address}?amount={amount}\"\n    if message:\n        bitcoin_data += f\"&message={message}\"\n    return bitcoin_data\ndef format_location(latitude, longitude, **kwargs):\n    location_data = f\"geo:{latitude},{longitude}\"\n    return location_data\ndef format_sms(phone, message, **kwargs):\n    phone += \"+1\" if not \"+\" in phone else \"\"",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "format_location",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def format_location(latitude, longitude, **kwargs):\n    location_data = f\"geo:{latitude},{longitude}\"\n    return location_data\ndef format_sms(phone, message, **kwargs):\n    phone += \"+1\" if not \"+\" in phone else \"\"\n    sms_data = f\"sms:{phone}:{message}\"\n    return sms_data\ndef format_email(email, subject, message, **kwargs):\n    email_data = f\"mailto:{email}?subject={subject}&body={message}\"\n    return email_data",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "format_sms",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def format_sms(phone, message, **kwargs):\n    phone += \"+1\" if not \"+\" in phone else \"\"\n    sms_data = f\"sms:{phone}:{message}\"\n    return sms_data\ndef format_email(email, subject, message, **kwargs):\n    email_data = f\"mailto:{email}?subject={subject}&body={message}\"\n    return email_data\ndef format_tel(number, **kwargs):\n    number += \"+1\" if not number.startswith(\"+\") else \"\"\n    tel_data = f\"tel:{number}\"",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "format_email",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def format_email(email, subject, message, **kwargs):\n    email_data = f\"mailto:{email}?subject={subject}&body={message}\"\n    return email_data\ndef format_tel(number, **kwargs):\n    number += \"+1\" if not number.startswith(\"+\") else \"\"\n    tel_data = f\"tel:{number}\"\n    return tel_data\nprefix_maps = {\n    \"contact\": format_contact,\n    \"event\": format_event,",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "format_tel",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def format_tel(number, **kwargs):\n    number += \"+1\" if not number.startswith(\"+\") else \"\"\n    tel_data = f\"tel:{number}\"\n    return tel_data\nprefix_maps = {\n    \"contact\": format_contact,\n    \"event\": format_event,\n    \"bookmark\": format_bookmark,\n    \"wifi\": format_wifi,\n    \"bitcoin\": format_bitcoin,",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "generate_qr_code",
+        "kind": 2,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "def generate_qr_code(data=None, width=None, height=None, box_size=None, border_size=4, data_type=None, data_dict={}):\n    # Calculate box size based on the length of the data\n    try:\n        if data_type.lower() in prefix_maps.keys():\n            data = prefix_maps[data_type.lower()](**data_dict)\n            print(data)\n    except Exception as e:\n        return ValueError(e)\n    if data:\n        if box_size == None:",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "named_colors",
+        "kind": 5,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "named_colors = {\n    \"black\": (0, 0, 0),\n    \"white\": (255, 255, 255),\n    \"red\": (255, 0, 0),\n    \"green\": (0, 255, 0),\n    \"blue\": (0, 0, 255),\n    \"yellow\": (255, 255, 0),\n    \"orange\": (255, 165, 0),\n    \"purple\": (128, 0, 128),\n    \"pink\": (255, 192, 203),",
+        "detail": "utils",
+        "documentation": {}
+    },
+    {
+        "label": "prefix_maps",
+        "kind": 5,
+        "importPath": "utils",
+        "description": "utils",
+        "peekOfCode": "prefix_maps = {\n    \"contact\": format_contact,\n    \"event\": format_event,\n    \"bookmark\": format_bookmark,\n    \"wifi\": format_wifi,\n    \"bitcoin\": format_bitcoin,\n    \"location\": format_location,\n    \"sms\": format_sms,\n    \"email\": format_email,\n    \"tel\": format_tel",
+        "detail": "utils",
+        "documentation": {}
+    }
+]
