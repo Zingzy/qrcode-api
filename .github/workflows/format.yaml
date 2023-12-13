@@ -25,11 +25,3 @@ jobs:
 
       - name: Format Python Files
         run: black .
-
-      - name: Commit and Push Changes
-        run: |
-          git config --local user.email "action@github.com"
-          git config --local user.name "GitHub Action"
-          git add .
-          git commit -m "Auto-format code with Black"
-          git push

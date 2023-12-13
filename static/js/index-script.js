@@ -52,11 +52,11 @@ function generateQRCode() {
     var apiUrl;
 
     if (qrType === "simple") {
-        apiUrl = `https://qr.spoo.me/simple?url=${encodeURIComponent(
+        apiUrl = `https://qr.spoo.me/classic?url=${encodeURIComponent(
             userInput,
         )}&fill=${fillColor}&back=${bgColor}`;
     } else {
-        apiUrl = `https://qr.spoo.me/radial?url=${encodeURIComponent(
+        apiUrl = `https://qr.spoo.me/gradient?url=${encodeURIComponent(
             userInput,
         )}&gradient1=${gradientColor}&gradient2=${gradient2Color}`;
     }
