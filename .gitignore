@@ -6,3 +6,4 @@ venv
 poetry.lock
 .idea
 .vscode
+.hintrc

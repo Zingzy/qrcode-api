@@ -45,12 +45,12 @@ def heath():
 
 @app.route("/classic", methods=["POST", "GET"])
 def generate_simple_qr():
-    text = request.args.get("text")
-    fill_color = request.args.get("fill", "black")
-    back_color = request.args.get("back", "white")
-    size = request.args.get("size", None)
-    data_format = request.args.get("format", None)
-    formatting_dict = request.args.get("formattings", None)
+    text = request.values.get("text")
+    fill_color = request.values.get("fill", "black")
+    back_color = request.values.get("back", "white")
+    size = request.values.get("size", None)
+    data_format = request.values.get("format", None)
+    formatting_dict = request.values.get("formattings", None)
 
     if not text and not data_format:
         return jsonify({"error": "Text parameter is missing"}), 400
@@ -138,13 +138,13 @@ def generate_simple_qr():
 
 @app.route("/gradient", methods=["POST", "GET"])
 def generate_raidal_qr():
-    text = request.args.get("text")
-    gradient1 = request.args.get("gradient1", "(106,26,76)")
-    gradient2 = request.args.get("gradient2", "(64,53,60)")
-    back_color = request.args.get("back", "(255, 255, 255)")
-    size = request.args.get("size", None)
-    data_format = request.args.get("format", None)
-    formatting_dict = request.args.get("formattings", None)
+    text = request.values.get("text")
+    gradient1 = request.values.get("gradient1", "(106,26,76)")
+    gradient2 = request.values.get("gradient2", "(64,53,60)")
+    back_color = request.values.get("back", "(255, 255, 255)")
+    size = request.values.get("size", None)
+    data_format = request.values.get("format", None)
+    formatting_dict = request.values.get("formattings", None)
 
     if not text and not data_format:
         return jsonify({"error": "Text parameter is missing"}), 400
