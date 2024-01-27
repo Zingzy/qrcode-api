@@ -15,6 +15,8 @@ from qrcode.image.styles.colormasks import (
     SquareGradiantColorMask,
     HorizontalGradiantColorMask,
     VerticalGradiantColorMask,
+    ImageColorMask,
+    SolidFillColorMask,
 )
 import io
 import sys
@@ -46,8 +48,8 @@ def heath():
 @app.route("/classic", methods=["POST", "GET"])
 def generate_simple_qr():
     text = request.values.get("text")
-    fill_color = request.values.get("fill", "black")
-    back_color = request.values.get("back", "white")
+    fill = request.values.get("fill", "black")
+    back = request.values.get("back", "white")
     size = request.values.get("size", None)
     data_format = request.values.get("format", None)
     formatting_dict = request.values.get("formattings", None)
@@ -91,8 +93,8 @@ def generate_simple_qr():
         except:
             return jsonify({"error": "Invalid text Input"}), 400
 
-    fill_color = urllib.parse.unquote(fill_color)
-    back_color = urllib.parse.unquote(back_color)
+    fill_color = urllib.parse.unquote(fill)
+    back_color = urllib.parse.unquote(back)
 
     try:
         fill_color_rgb = parse_color(fill_color)
@@ -119,8 +121,7 @@ def generate_simple_qr():
         qr_image = qr.make_image(
             image_factory=StyledPilImage,
             module_drawer=RoundedModuleDrawer(),
-            fill_color=fill_color_rgb,
-            back_color=back_color_rgb,
+            color_mask= SolidFillColorMask(back_color_rgb, fill_color_rgb),
         )
     except Exception as e:
         return jsonify({"error": f"Error generating QR code: {str(e)}"}), 500
