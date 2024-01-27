@@ -19,18 +19,18 @@ from qrcode.image.styles.colormasks import (
 import io
 import sys
 import urllib.parse
-from flask_caching import Cache
+# from flask_caching import Cache
 from flask_cors import CORS
 from utils import *
 import json
 
-config = {"DEBUG": True, "CACHE_TYPE": "SimpleCache", "CACHE_DEFAULT_TIMEOUT": 300}
+# config = {"DEBUG": True, "CACHE_TYPE": "SimpleCache", "CACHE_DEFAULT_TIMEOUT": 300}
 
 app = Flask(__name__)
 CORS(app)
 
-app.config.from_mapping(config)
-cache = Cache(app)
+# app.config.from_mapping(config)
+# cache = Cache(app)
 
 
 @app.route("/", methods=["GET"])
